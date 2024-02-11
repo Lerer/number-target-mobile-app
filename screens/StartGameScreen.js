@@ -1,13 +1,13 @@
-import { TextInput, View, StyleSheet, Alert, Text } from "react-native";
-import { useState } from "react";
-import PrimaryButton from "../components/ui/PrimaryButton";
-import Card from "../components/ui/Card";
-import Colors from "../constants/colors";
-import Title from "../components/ui/Title";
-import InstructionText from "../components/ui/InstructionText";
+import { TextInput, View, StyleSheet, Alert } from 'react-native';
+import { useState } from 'react';
+import PrimaryButton from '../components/ui/PrimaryButton';
+import Card from '../components/ui/Card';
+import Colors from '../constants/colors';
+import Title from '../components/ui/Title';
+import InstructionText from '../components/ui/InstructionText';
 
 function StartGameScreen({ onPickedNumber }) {
-  const [enteredNumber, setEnteredNumber] = useState("");
+  const [enteredNumber, setEnteredNumber] = useState('');
 
   function numberInputHandler(enteredText) {
     setEnteredNumber(enteredText);
@@ -19,12 +19,12 @@ function StartGameScreen({ onPickedNumber }) {
     if (isNaN(chosenNumber) || chosenNumber <= 0 || chosenNumber > 99) {
       //Show alert
       Alert.alert(
-        "Invalid number",
-        "Number has to be a number between 1 and 99.",
+        'Invalid number',
+        'Number has to be a number between 1 and 99.',
         [
           {
-            text: "Okay!",
-            style: "destructive",
+            text: 'Okay!',
+            style: 'destructive',
             onPress: resetInputHandler,
           },
         ]
@@ -35,7 +35,7 @@ function StartGameScreen({ onPickedNumber }) {
   }
 
   function resetInputHandler() {
-    setEnteredNumber("");
+    setEnteredNumber('');
   }
 
   return (
@@ -67,9 +67,9 @@ function StartGameScreen({ onPickedNumber }) {
 
 const styles = StyleSheet.create({
   rootContainer: {
-    flex:1,
+    flex: 1,
     marginTop: 100,
-    alignItems:'center'
+    alignItems: 'center',
   },
   numberInput: {
     height: 50,
@@ -79,11 +79,11 @@ const styles = StyleSheet.create({
     borderBottomColor: Colors.accent500,
     borderBottomWidth: 2,
     marginVertical: 8,
-    fontWeight: "bold",
-    textAlign: "center",
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
   buttonsContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   buttonContainer: {
     flex: 1,
